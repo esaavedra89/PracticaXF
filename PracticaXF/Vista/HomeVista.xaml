@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PracticaXF.Vista.HomeVista"
+             Title="Home"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+               FontSize="32"
+               Text="Welcome to Home Page!"
+               TextColor="Blue"
+               VerticalOptions="Start" 
+               HorizontalOptions="Center" />
+            <ListView
+                CachingStrategy="RecycleElementAndDataTemplate"
+                HasUnevenRows="True"
+                Margin="40"
+                IsPullToRefreshEnabled="False"
+                ItemsSource="{Binding ListaUsuarioPrueba}"
+                SeparatorColor="#910b20"
+                SeparatorVisibility="Default"
+                VerticalOptions="FillAndExpand"
+                x:Name="ListaUsuarios">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                RowSpacing="1"
+                                VerticalOptions="CenterAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Start"
+                                    LineBreakMode="TailTruncation"
+                                    Margin="0"
+                                    Text="{Binding Nombre}"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Label.FontSize>
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="17"
+                                            Tablet="18"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <Label
+                                    Grid.Column="1"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Start"
+                                    LineBreakMode="TailTruncation"
+                                    Margin="0"
+                                    Text="{Binding Apellido}"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Label.FontSize>
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="17"
+                                            Tablet="18"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <Label
+                                    Grid.Column="2"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Start"
+                                    LineBreakMode="TailTruncation"
+                                    Margin="0"
+                                    Text="{Binding Ocupacion}"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Label.FontSize>
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="17"
+                                            Tablet="18"/>
+                                    </Label.FontSize>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

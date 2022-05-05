@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PracticaXF.Vista.LoginVista">
+    <ContentPage.Content>
+        <StackLayout
+            HeightRequest="600"
+            Margin="40,60">
+            <Image 
+                HorizontalOptions="Center" 
+                Source="xamarinlogo">
+                <Image.HeightRequest>
+                    <OnIdiom
+                        x:TypeArguments="x:Double"
+                        Phone="100"
+                        Tablet="120"/>
+                </Image.HeightRequest>
+            </Image>
+            <Label 
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" 
+                Margin="0,20,0,0"
+                Text="Xamarin App"
+                VerticalOptions="Start"/>
+            <Entry
+                Text="{Binding Usuario}" 
+                HorizontalOptions="Fill" 
+                Margin="0,20"
+                Placeholder="Usuario"
+                VerticalOptions="Start" 
+                x:Name="User"></Entry>
+            <Entry
+                Text="{Binding Contrasenna}" 
+                VerticalOptions="Start" 
+                HorizontalOptions="Fill" 
+                Placeholder="Contraseña"
+                IsPassword="True"
+                x:Name="Password"></Entry>
+
+            <Button
+                BackgroundColor="Blue"
+                Command="{Binding EnviarCommand}"
+                Text="Envíar"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="20"
+                Margin="0,20"
+                VerticalOptions="Start" 
+                HorizontalOptions="Fill"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
